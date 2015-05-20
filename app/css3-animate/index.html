@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../../module/rest.css/kissy-reset.css" />
+    <link type="text/css" rel="stylesheet" href="../../module/animate.css/animate.css" />
+    <style>
+        #animationSandbox img{width: 300px;height: 300px;}
+        h1{
+            color: #f35626;
+            background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-animation: hue 60s infinite linear;
+            font-size:3rem;
+        }
+        select{
+            width: 300px;
+            height: 30px;
+        }
+        input{
+            height: 30px;
+            width: 100px;
+        }
+
+        .formiddle{
+            text-align: center;
+            position: absolute;
+            left:38%;
+            top:10%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="formiddle">
+
+    <div id="animationSandbox">
+        <h1>武汉飞牛</h1>
+        <img src="../../static/img-public/feiniutu.png">
+    </div>
+    <h1>Animate.css 动画特效</h1>
+    <select class="input input--dropdown js--animations">
+    <optgroup label="Attention Seekers">
+        <option value="bounce">bounce</option>
+        <option value="flash">flash</option>
+        <option value="pulse">pulse</option>
+        <option value="rubberBand">rubberBand</option>
+        <option value="shake">shake</option>
+        <option value="swing">swing</option>
+        <option value="tada">tada</option>
+        <option value="wobble">wobble</option>
+    </optgroup>
+
+    <optgroup label="Bouncing Entrances">
+        <option value="bounceIn">bounceIn</option>
+        <option value="bounceInDown">bounceInDown</option>
+        <option value="bounceInLeft">bounceInLeft</option>
+        <option value="bounceInRight">bounceInRight</option>
+        <option value="bounceInUp">bounceInUp</option>
+    </optgroup>
+
+    <optgroup label="Bouncing Exits">
+        <option value="bounceOut">bounceOut</option>
+        <option value="bounceOutDown">bounceOutDown</option>
+        <option value="bounceOutLeft">bounceOutLeft</option>
+        <option value="bounceOutRight">bounceOutRight</option>
+        <option value="bounceOutUp">bounceOutUp</option>
+    </optgroup>
+
+    <optgroup label="Fading Entrances">
+        <option value="fadeIn">fadeIn</option>
+        <option value="fadeInDown">fadeInDown</option>
+        <option value="fadeInDownBig">fadeInDownBig</option>
+        <option value="fadeInLeft">fadeInLeft</option>
+        <option value="fadeInLeftBig">fadeInLeftBig</option>
+        <option value="fadeInRight">fadeInRight</option>
+        <option value="fadeInRightBig">fadeInRightBig</option>
+        <option value="fadeInUp">fadeInUp</option>
+        <option value="fadeInUpBig">fadeInUpBig</option>
+    </optgroup>
+
+    <optgroup label="Fading Exits">
+        <option value="fadeOut">fadeOut</option>
+        <option value="fadeOutDown">fadeOutDown</option>
+        <option value="fadeOutDownBig">fadeOutDownBig</option>
+        <option value="fadeOutLeft">fadeOutLeft</option>
+        <option value="fadeOutLeftBig">fadeOutLeftBig</option>
+        <option value="fadeOutRight">fadeOutRight</option>
+        <option value="fadeOutRightBig">fadeOutRightBig</option>
+        <option value="fadeOutUp">fadeOutUp</option>
+        <option value="fadeOutUpBig">fadeOutUpBig</option>
+    </optgroup>
+
+    <optgroup label="Flippers">
+        <option value="flip">flip</option>
+        <option value="flipInX">flipInX</option>
+        <option value="flipInY">flipInY</option>
+        <option value="flipOutX">flipOutX</option>
+        <option value="flipOutY">flipOutY</option>
+    </optgroup>
+
+    <optgroup label="Lightspeed">
+        <option value="lightSpeedIn">lightSpeedIn</option>
+        <option value="lightSpeedOut">lightSpeedOut</option>
+    </optgroup>
+
+    <optgroup label="Rotating Entrances">
+        <option value="rotateIn">rotateIn</option>
+        <option value="rotateInDownLeft">rotateInDownLeft</option>
+        <option value="rotateInDownRight">rotateInDownRight</option>
+        <option value="rotateInUpLeft">rotateInUpLeft</option>
+        <option value="rotateInUpRight">rotateInUpRight</option>
+    </optgroup>
+
+    <optgroup label="Rotating Exits">
+        <option value="rotateOut">rotateOut</option>
+        <option value="rotateOutDownLeft">rotateOutDownLeft</option>
+        <option value="rotateOutDownRight">rotateOutDownRight</option>
+        <option value="rotateOutUpLeft">rotateOutUpLeft</option>
+        <option value="rotateOutUpRight">rotateOutUpRight</option>
+    </optgroup>
+
+    <optgroup label="Specials">
+        <option value="hinge">hinge</option>
+        <option value="rollIn">rollIn</option>
+        <option value="rollOut">rollOut</option>
+    </optgroup>
+
+    <optgroup label="Zoom Entrances">
+        <option value="zoomIn">zoomIn</option>
+        <option value="zoomInDown">zoomInDown</option>
+        <option value="zoomInLeft">zoomInLeft</option>
+        <option value="zoomInRight">zoomInRight</option>
+        <option value="zoomInUp">zoomInUp</option>
+    </optgroup>
+
+    <optgroup label="Zoom Exits">
+        <option value="zoomOut">zoomOut</option>
+        <option value="zoomOutDown">zoomOutDown</option>
+        <option value="zoomOutLeft">zoomOutLeft</option>
+        <option value="zoomOutRight">zoomOutRight</option>
+        <option value="zoomOutUp">zoomOutUp</option>
+    </optgroup>
+</select>
+    <input type="button" value="开始" class="js--triggerAnimation">
+
+</div>
+    <script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script>
+        $(function(){
+            $('#inp').on('click',function(){
+                $('#test2').toggleClass('animated fadeInUp');
+            })
+        })
+    </script>
+
+    <script>
+        function testAnim(x) {
+            $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass();
+            });
+        };
+
+        $(document).ready(function(){
+            $('.js--triggerAnimation').click(function(e){
+                e.preventDefault();
+                var anim = $('.js--animations').val();
+                testAnim(anim);
+            });
+
+            $('.js--animations').change(function(){
+                var anim = $(this).val();
+                testAnim(anim);
+            });
+        });
+
+    </script>
+</body>
+</html>

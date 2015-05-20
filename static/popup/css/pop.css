@@ -1,0 +1,42 @@
+/*=E=rest css
+*临时重置文件
+----------------------------------------------------*/
+*{margin: 0;padding: 0;}
+body{font:12px/1.67em Tahoma, Arial, "Simsun", sans-serif;margin:20px;}
+li{list-style: none;}
+
+.cm_popup{ background:#6B6B6B; padding:5px; width:300px; position:relative;display:none;}
+.cm_popup_cont{ background:#fff;color: #3c3c3c;font-size: 12px;}
+.pop_hd{background: #f6f6f6;height: 35px;line-height:35px;font-family: 'microsoft yahei';font-size: 14px;}
+.pop_hd .txt{margin-left: 20px; float:left;}
+.pop_close{height:12px;width:12px;background:url(../img/sprit_common_module.gif) no-repeat;cursor: pointer; float:right; margin:12px 9px 9px 9px;}
+.pop_bd .cont{position:relative;padding:20px 0;}
+.cm_popup .ft{padding-bottom: 25px;overflow: hidden;margin: 0 auto;width:158px;}
+.cm_popup .btn_sub{width: 70px;height: 30px;text-indent:-999em;margin: 0 auto;display:block;background: url(../img/sprit_common_module.gif) no-repeat 0 -22px;}
+.creat_success .icon,.creat_defeat .icon,.creat_warn .icon{background:url(../img/sprit_common_module.gif) no-repeat;width:30px;height:30px;position:absolute;left:174px;top:15px;}
+.confirm_delete{width:380px;}
+.creat_defeat .cont,.creat_warn .cont,.creat_success .cont{padding-left:120px;font-family:'microsoft yahei';font-size:18px;}
+
+.creat_defeat .cont .icon{background-position:0 -22px;left:75px;}
+.creat_success .cont .icon{background-position:-46px -22px;width:39px;left:75px;}
+.creat_warn .cont .icon{background-position:-85px -22px;width:39px;height:32px;left:70px;}
+.cm_popup .ft .btn_ok{background:url(../img/sprit_common_module.gif) no-repeat 0 -63px;width:60px;height:28px;text-indent:-999em;float:left;}
+.cm_popup .ft .btn_cancle{background:url(../img/sprit_common_module.gif) no-repeat 0 -101px;width:60px;height:28px;text-indent:-999em;float:left;}
+.mr30{margin-right:30px;}
+.mr15{margin-right:15px;}
+.w60{width:60px!important;}
+
+.cm_pop_arrow{background:url(../img/sprit_common_module.gif) 0 -139px no-repeat;position:absolute;left:96px;top:-11px;width:22px;height:11px;}
+
+
+/*.cm_popup .btn_ok{width: 70px;height: 30px;text-indent:-999em;margin: 0 auto;display:block;background: url(../img/sprit_common_module.gif) no-repeat 0 -22px;}
+*/
+.confirm_delete .cont{font-family:'microsoft yahei';font-size:18px;text-align: center;}
+
+.confirm_delete_s2{background:#fff; width:212px;border:1px solid #dbdbdb;}
+.confirm_delete_s2 .cont{font-family:'宋体';font-size:12px;font-weight:500;text-align: center;padding:20px;color:#3c3c3c;}
+
+.tip_box{border:1px #ddd solid;width:180px;}
+.tip_box .cont{position:relative;color:#3c3c3c;padding:40px 0 40px 90px;}
+.tip_box .cont .icon{background:url(../img/sprit_common_module.gif) -46px -22px no-repeat;width:39px;position:absolute;left:43px;top:30px;width:39px;height:30px;}
+	

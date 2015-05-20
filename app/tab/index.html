@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.item{width: 100px;height: 100px;background: pink;}
+		.item:nth-child(odd){width: 100px;height: 100px;background: silver;}
+		.active{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+tab切换
+	<div class="navs">
+		<input class="active" type="button" value="A" id="inpt1">
+		<input type="button" value="B" id="inpt2">
+	</div>
+	<div class="conts">
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script src="../../module/tab/jq.tab.js"></script>
+	<script type="text/javascript">
+		Tab({
+			"navs":$('.navs input'),
+			"evens":"click",
+			"conts":$('.conts .item'),
+			"activeClass":'active',
+			"num":"0"
+		})
+	</script>
+
+</body>
+</html>

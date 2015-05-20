@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分类选择</title>
+	<style>
+	
+	*{margin: 0;padding: 0;list-style: none;  font: 12px/1.67em "宋体",Tahoma, Arial, "Simsun", sans-serif;  text-decoration: none;color: #000;}/*临时css重置*/
+
+
+	/*弹窗*/
+.tool_popup {
+	width: 903px;
+	padding: 6px;
+	background: #6b6b6b;
+}
+
+.tool_popup .tool_con {
+	background: #fff;
+	overflow: hidden;
+}
+
+.tool_popup .tool_con .tool_title {
+	height: 35px;
+	background: #f6f6f6;
+}
+
+.tool_popup .tool_con .tool_title h2 {
+	margin-left: 10px;
+	width: 80px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	line-height: 35px;
+	float: left;
+}
+
+.tool_popup .tool_con .tool_title i {
+	display: block;
+	width: 12px;
+	height: 12px;
+	float: right;
+	background: url(images/coupon.jpg) no-repeat 0 0;
+	margin: 12px 10px 11px 0;
+	cursor: pointer;
+}
+
+.tool_popup .tool_con .tool_add {
+	height: 28px;
+	margin: 10px 0 10px 0;
+}
+
+.tool_popup .tool_con .tool_add p {
+	display: block;
+	color: #3c3c3c;
+	width: 75px;
+	float: left;
+	line-height: 28px;
+	margin-left: 20px;
+}
+
+.tool_popup .tool_con .tool_add select {
+	width: 198px;
+	border: 1px solid #dddddd;
+	height: 26px;
+	float: left;
+}
+
+.tool_popup .tool_con .tool_ifi {
+	margin-top: 15px;
+	overflow: hidden;
+}
+
+.tool_popup .tool_con .tool_ifi .cate {
+	width: 213px;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.tool_popup .tool_con .tool_ifi .cate ul {
+	padding: 10px 5px 10px 15px;
+	border: 1px solid #dfdfdf;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.tool_popup .tool_con .tool_ifi .cate ul li {
+	display: block;
+	width: 191px;
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	color: #3c3c3c;
+	cursor: pointer;
+}
+
+.tool_popup .tool_con .tool_ifi .cate ul li.on {
+	color: #f22e00;
+}
+
+.tool_popup .tool_con .add_btn {
+	height: 22px;
+	width: 120px;
+	float: left;
+	padding: 173px 0 173px;
+}
+
+.tool_popup .tool_con .add_btn a.add_all {
+	width: 100px;
+	height: 26px;
+	display: block;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+	vertical-align: middle;
+	background: url(images/coupon.jpg) no-repeat -1px -334px;
+	margin-left: 20px;
+}
+
+.tool_popup .tool_con .add_con {
+	width: 482px;
+	float: left;
+	border: 1px solid #dddddd;
+	margin-left: 20px;
+	padding: 0 10px 10px 15px;
+	height: 368px;
+}
+
+.tool_popup .tool_con .add_con em {
+	width: 127px;
+	display: block;
+	height: 22px;
+	border: 1px solid #d1d1d1;
+	color: #313131;
+	line-height: 24px;
+	float: left;
+	margin: 10px 10px 0 0;
+	padding: 0 5px 0 5px;
+	background: #f3f3f3;
+}
+
+.tool_popup .tool_con .add_con em ins {
+	display: block;
+	width: 13px;
+	height: 13px;
+	float: right;
+	background: url(images/cha.jpg) no-repeat;
+	margin: 5px 5px 4px 0;
+}
+
+.tool_popup .tool_con .tool_add .searchText {
+  width: 180px;
+  height: 30px;
+  margin: 2px 0;
+  margin-right: 10px;
+  float: left;
+}
+
+a.tool_seach {
+  display: block;
+  width: 89px;
+  height: 30px;
+  background: url(images/coupon.jpg) no-repeat 0 -31px;
+  float: left;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  margin: 2px 0 2px 0;
+}
+/*确认按钮*/
+a.up_step {
+	width: 89px;
+	height: 30px;
+	display: block;
+	background: url(images/coupon.jpg) no-repeat 0 -31px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+
+	</style>
+
+</head>
+<body>
+	<!-- =S 弹窗 -->
+<div class="tool_popup">
+  <div class="tool_con" style="min-height:540px;">
+      <div class="tool_title">
+          <h2>分类选择</h2>
+            <i data-role="c-close"></i>
+        </div>
+        <div class="tool_add">
+          <p>增加分类：</p>
+            <input type="text" class="searchText">
+            <a href="javascript:;" class="tool_seach">搜索</a>
+        </div>
+        <div class="tool_ifi" style="display:none">
+          <div class="cate">
+              <ul>
+                  <li>糖果巧克力</li>
+                    <li>坚果米糖</li>
+                    <li>糖果巧克力</li>
+                    <li>坚果米糖</li>
+                    <li>糖果巧克力</li>
+                    <li>坚果米糖</li>
+                    <li>糖果巧克力</li>
+                    <li>坚果米糖</li>
+                    <li>糖果巧克力</li>
+                    <li class="on">坚果米糖</li>
+                    <li>糖果巧克力</li>
+                    <li>坚果米糖</li>
+                    <li>糖果巧克力</li>
+                    <li>坚果米糖</li>
+                    <li>糖果巧克力</li>
+                </ul> 
+                <a class="up_step tool_fl" data-role="sureBtn" href="javascript:;">确认</a>
+            </div>
+            <div class="add_btn">
+              <a class="add_all" href="javascript:;">添加全部</a>
+            </div>
+            <div class="add_con">
+
+            </div>
+            </div>
+    </div>
+</div>
+<!-- =E 弹窗 -->
+
+<script type="text/javascript" src="../../lib/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<!-- <script type="text/javascript" src="http://wh-files.fn.com/file/UI/dwq/jquery/1.11.2/jquery-1.11.2.min.js"></script> -->
+	<script type="text/javascript" src="js/js.js"></script>
+</body>
+</html>

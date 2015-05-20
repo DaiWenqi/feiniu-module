@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮播图</title>
+<!-- <link href="css/reset.css" rel="stylesheet" type="text/css" /> -->
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/fnx-pack-min.js"></script>
+<style>
+	ul,li,a{margin: 0;padding: 0;}
+/*	.carousel{width: 1200px;}*/
+/*	.carousel .pic img{width: 100%;}*/
+</style>
+
+</head>
+
+<body>
+
+<div class="carousel">
+	<ul class="pic" data-role="content">
+    	<li><a href="#"><img src="images/banner_1.png"/></a></li>
+        <li><a href="#"><img src="images/banner_2.png"/></a></li>
+        <li><a href="#"><img src="images/banner_3.png"/></a></li>
+    </ul>
+    <a class="prev" href="javascript:void(0)"></a>
+    <a class="next" href="javascript:void(0)"></a>
+    <ul class="hd" data-role="nav">
+    	<li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script type="text/javascript">
+	toSlide({
+		trigger : '.carousel',
+		width : 1600
+	});
+	
+	function toSlide(options){
+		var opts = $.extend({
+			width : 1600
+		}, options || {});
+		
+		$('img',opts.trigger).css('width',opts.width);
+		var elem = $(opts.trigger).css('width',opts.width);
+				
+		
+		var sde = new FNX.CMP.Switchable.Slide({
+            element: elem,
+            effect: 'scrollx',
+            interval: 2000,
+			activeTriggerClass : 'on',
+			autoplay :'none',
+			events : {
+				'click .prev' : 'prev',
+				'click .next' : 'next'
+			}
+        });
+		
+		sde.$('.next').on('click',function(){
+			if($(this).hasClass('close-btn')){
+				elem.hide();
+			}
+		});
+		
+			
+		sde.on('switch', function(toIndex, fromIndex) {
+			var next = this.$('.next');
+			if(toIndex == 2){
+				next.addClass('close-btn');
+			}else{
+				next.removeClass('close-btn');
+			}
+		});
+	};
+	
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.ui-button-dropdown {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.ui-button-dropdown-large,
+.ui-button-dropdown-middle,
+.ui-button-dropdown-small {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: 0 0 4px #d9d9d9;
+    zoom: 1;
+    position: absolute;
+    left: 0;
+    width: 98%;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.ui-button-dropdown-large {
+    top: 33px;
+    font-size: 14px;    
+}
+.ui-button-dropdown-middle {
+    top: 29px;
+    font-size: 14px;    
+}
+.ui-button-dropdown-small {
+    top: 25px;
+    font-size: 12px;
+}
+.ui-button-dropdown-item {
+    zoom: 1;
+    border-bottom: 1px solid #E6E6E6;    
+}
+.ui-button-dropdown-item a {
+    padding: 5px 10px;
+    display: block;
+    zoom: 1;
+    color: #08c;
+}
+.ui-button-dropdown-item a:hover {
+    background-color: #DFE9F2;
+    text-decoration:none;
+}
+
+
+
+/* 橙色 */
+
+.ui-dbutton-orange:hover {
+    color: #fff;
+    background-color: #f57403;
+}
+
+.ui-dbutton-orange .ui-dbutton-self:hover,
+.ui-dbutton-orange .ui-dbutton-arrow:hover {
+    background-color: #fb8318;
+}
+
+.ui-dbutton-orange .ui-dbutton-self {
+    border-right: 1px solid #e8720b;
+}
+
+.ui-dbutton-orange .ui-dbutton-arrow {
+    border-left: 1px solid #fd8a27;
+    color: #fff;
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+
+		.item{width: 100px;height: 100px;background: pink;}
+		.item:nth-child(odd){width: 100px;height: 100px;background: silver;}
+		.active{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+tab切换
+
+	<div id="tab-1"></div>
+	<div id="tab-2"></div>
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script src="../../module/tab/jq.tab.v2.1.js"></script>
+	<script src="../../module/artTemplate/template.js"></script>
+	<!-- S 模版 -->
+	
+
+	<script type="text/javascript">
+	var data_1 = {
+		isAdmin: true,
+		navs:["第一NAV","第二NAV"],
+		conts:["第一CONT","第二CONT"]
+	};
+
+	var data_2 = {
+		isAdmin: true,
+		navs:["第一NAV","第二NAV"],
+		conts:["第一CONT","第二CONT"]
+	};
+
+
+	 </script>
+
+	<!-- E 模版 -->
+
+	<script type="text/javascript">
+		// Tab({
+		// 	"navs":$('.navs input'),
+		// 	"evens":"click",
+		// 	"conts":$('.conts .item'),
+		// 	"activeClass":'active',
+		// 	"num":"1"
+		// })
+		$(function(){
+
+			$.get("tabTemplate.html", function(tpl){
+
+			  var render = template.compile(tpl);
+
+			  var html1 = render(data_1);
+
+			  $("#tab-1").html(html1);
+			  var tab_1 = new dwq.com.Tab({
+					"navs":$('#tab-1 .navs input'),
+					"evens":"click",
+					"conts":$('#tab-1 .conts .item'),
+					"activeClass":'active',
+					"num":"1"
+			  });
+
+		      tab_1.setSwitchTo(1);
+		      
+		      tab_1.setContent({
+					index:1,
+					cont:"<p>dwq</p>"
+				})
+		      console.log(tab_1.getActive());
+			});
+
+			
+
+			
+
+			
+
+			// var tab_2 = new dwq.com.Tab({
+			// 		"navs":$('#tab-2 .navs input'),
+			// 		"type":"click",
+			// 		"conts":$('#tab-2 .conts .item'),
+			// 		"activeClass":'active',
+			// 		"num":"0"
+			// });
+
+
+		})
+		
+		
+
+	</script>
+
+</body>
+</html>

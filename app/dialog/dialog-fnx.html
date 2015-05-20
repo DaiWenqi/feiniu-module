@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../module/dialog/fnx-pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../module/dialog/dialog.css">
+
+	<script type="text/javascript">
+	$(function(){
+
+		//view
+		var dialogTemplate='<div id="b" class="widget"><h3>{{title}}</h3><p>{{content}}</p></div>';
+
+		//model
+		var model = {
+	    	title : 'ssss',
+	    	content : 'content'
+	    };
+
+
+	    //control
+		var html = FNX.CMP.Templatable.compile(dialogTemplate,model);
+
+
+		var box = new FNX.CMP.Dialog.ConfirmBox({
+		    //title: '我是标题',
+
+		    //模版设置
+		    message: '',
+		    confirmTpl : '<a class="ui-dialog-button-orange">提交</a>',
+		    cancelTpl  : '<a class="ui-dialog-button-white">取消22</a>'
+		}).render();
+
+		box.set('message',html);
+
+
+		//确认回调
+		box.on('confirm',function(){
+			alert('confirm');
+			this.hide();
+			//this.destroy();//彻底销毁
+			//box.set('message','dwq');
+
+		});
+
+		box.on('cancel',function(){
+			alert('cancel');
+		});
+
+		//回调
+		box.after('hide', function() {
+		    alert('回调')
+		});
+
+		//box.show();
+
+		$('input').click(function(){
+			box.show();
+		})
+	});
+	</script>
+
+</head>
+<body>
+<input type="button" value="按钮" >
+</body>
+</html>

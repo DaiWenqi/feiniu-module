@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="../../module/rest.css/kissy-reset.css" />
+<link type="text/css" rel="stylesheet" href="../../static/verification/css/validatebox.css" />
+<style type="text/css">
+	
+	.tip{background-color:rgb(255,255,204) }
+
+</style>
+</head>
+
+<body>
+<select id="sel1">
+	<option value="0">BBBB</option>
+	<option value="1">B222</option>
+	<option value="2">B333</option>
+</select>
+<div class="tip" style="display:none;"> 不能为空</div>
+<div id="div1" validType="selectValueRequired['#div1']"></div>
+
+<select name="addProvince" id="addProvince"  class="ks_select easyui-validatebox" required="true" validType="selectValueZero['#addProvince']" missingMessage="请选择省" style="width: 110px;">
+	<option value="0"></option>
+	<option selected value="1">AAA</option>
+	<option value="2">AAA</option>
+	<option value="3">AAA</option>
+</select>
+<span style="color: red;">*</span>
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script src="../../module/easyui/jquery.easyui.min.js"></script>
+	<script src="../../static/verification/js/jquery.validatebox.js"></script>
+	<script src="../../static/verification/js/validateExtend.js"></script>
+    <script>
+
+    $('#sel1').change(function(){
+    	var str=$('#sel1').val();
+    	var bool=IsValueZero(str);
+    	var $tip=$('.tip');
+    	var that=$(this);
+
+    	if(bool){
+    		$tip.show();
+    		that.addClass('validatebox-invalid')
+    	}else{
+    		$tip.hide();
+    		that.removeClass('validatebox-invalid')
+    	}
+
+    	that.blur(function(){
+    		$tip.hide();
+    	})
+
+    	console.log(IsValueZero(str))
+    })
+
+		
+
+	function IsValueZero(s)
+	{        
+        if(s.length!=0){
+	        var reg=/^0$/;
+	        if(reg.test(s)){    
+	            return true;
+	        }
+        }    
+	} 
+    </script>
+</body>
+</html>

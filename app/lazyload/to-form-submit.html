@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+	.mask{
+		background-image: url('loading.gif');
+		background-position: center center;
+		background-repeat: no-repeat; 
+	}
+	</style>
+	<script type="text/javascript" src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="jquery-mask-2.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//$('.js_load').mask().mask('hide');
+		//$.mask.hide();
+
+		$('input').click(function(){
+
+			$('.js_load').mask()//.mask('hide');
+		});
+
+		setTimeout(function(){
+			$('.js_load').mask('hide')
+		},2000)
+	})
+	</script>
+</head>
+<body>
+	<form class="js_load" style="height:574px;width:765px;" action="#" onsubmit="return false;" method="get">
+		<input type="submit" /> <input name="name" type="text">
+	</form>
+</body>
+</html>

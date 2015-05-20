@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="../../module/rest.css/kissy-reset.css" />
+    <style>
+        .sub:nth-child(odd){width: 100px;height:100px;background: #000;}
+        .sub:nth-child(even){width: 100px;height:100px;background: #ccc;}
+    </style>
+</head>
+
+<body>
+    <input type="text" class="view">
+    <div class="container">
+        <div class="sub"></div>
+        <div class="sub"></div>
+        <div class="sub"></div>
+
+    </div>
+    <iframe id="iframepage" src="iframe.html" onload="iFrameHeight()">
+
+    </iframe>
+
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script>
+        function iFrameHeight() {
+            var ifm= document.getElementById("iframepage");
+            var subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument;
+            if(ifm != null && subWeb != null) {
+                ifm.height = subWeb.body.scrollHeight;
+            }
+        }
+
+
+        $(function(){
+
+
+
+
+
+//            var auto=autoHeight({
+//                $obj:$('.container'),
+//                width:true,
+//                height:true
+//            })
+
+            function autoHeight(option){
+                var obj=option.$obj,
+                    iW=option.width,
+                    iH=option.width;
+                if(iW){
+                    iW=obj.outerWidth();
+                }
+                if(iH){
+                    iH=obj.outerHeight();
+                }
+
+                obj.css({
+                    height:iH,
+                    width:iW
+                })
+
+                //xianshi
+                $('.view').val("高度"+iH+"px"+"，宽度"+iW+"px");
+
+            }
+            //$(window).resize(auto)
+
+            //============================
+
+
+        })
+    </script>
+</body>
+</html>

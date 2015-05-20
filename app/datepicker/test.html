@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="../../module/rest.css/kissy-reset.css" />
+<link type="text/css" rel="stylesheet" href="../../module/datepicker/WdatePicker.css" />
+<style type="text/css">
+	.wrap{height: 500px;width: 500px;background: #ccc;overflow: auto;margin: 100px auto;}
+	.inner{height: 1000px;background: pink;position: relative;}
+</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="inner">
+			<input id="d11" type="text" />
+		</div>
+	</div>
+		
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script src="../../module/datepicker/My97DatePicker/WdatePicker.js"></script>
+    <script>
+    // position: absolute; z-index: 100002; display: block; top: 23px; left: 0;
+        $(function(){
+        	$("#d11").click(function(){
+            	var sss = WdatePicker();
+            })
+            // var o={};
+            /*$("#d11").focus(function(){
+            	WdatePicker();
+
+            	
+            })
+
+            $("#d11").blur(function(){
+            	WdatePicker($dp.hide);
+
+
+            	
+            })
+*/
+
+            $('.wrap').on('scroll',function(){
+            	$dp.hide()
+            	// WdatePicker({
+            	// 	$dp.hide
+            	// })
+            	//$("[lang=zh-cn]").hide()
+            })
+
+            // $('.wrap').scroll(function(){
+            // 	// WdatePicker({
+            // 	// 	$dp.hide
+            // 	// })
+            // 	$("[lang=zh-cn]").hide()
+            // })
+            
+
+        })
+    </script>
+</body>
+</html>

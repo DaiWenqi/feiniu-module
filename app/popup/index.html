@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>飞牛前端主页-前端</title>
+<style type="text/css">
+/*-----------popup弹框------------------------*/
+.popup
+{
+	width:440px;
+	position:relative;
+	font-weight:bold;
+	display:none;
+}
+.popup_bar
+{
+	width:440px;
+	height:36px;
+	background-color:#c5390a;
+}
+.popup_tip
+{
+	line-height:36px;
+	padding-left:20px;
+	color:#FFFFFF;
+}
+
+.popup_txt
+{
+	text-align:center;
+	width:440px;
+	padding:30px 0;
+	background-color:#ccc;
+}
+.popup_txt a
+{
+	color:#C5390A; line-height:24px;
+}
+.popup_close
+{
+	width:16px;
+	height:16px;
+	background-image:url(../../static/popup/img/close.png);
+	position:absolute;
+	right:15px;
+	top:10px;
+}
+	/*--------手机分享--------*/
+.action_sj
+{
+	width:746px;
+	height:210px;
+	border:solid silver 1px;
+	margin-top:10px;
+	padding:20px 0 0 20px;
+	overflow:hidden;
+	color:#666666;
+}
+.action_sj h1
+{
+	font-family:微软雅黑;
+	color:#c5390a;
+
+}
+.sjnum_l
+{
+	width:410px;
+	height:160px;
+	padding:10px 0 0 4px;
+	float:left;
+	margin:10px 20px 0 0;
+	border-right:dotted 1px #CBCBCB;
+}
+.rule_r
+{
+	float:left;
+	height:160px;
+	width:306px;
+	font-size:12px;
+	line-height:16px;
+	margin-top:12px;
+}
+.import
+{
+	width:188px;
+	height:28px;
+	line-height:28px;
+	color:#666666;
+	padding:0px;
+	margin-bottom:10px;
+	border:1px solid #CBCBCB;
+}
+.button
+{
+	margin-top:20px;
+	background:url(../../static/popup/img/button.png) no-repeat;
+	width:101px;
+	height:34px;
+}
+.action_sj p
+{
+	color:#ff6600;
+	font-weight:bold;
+	font-size:12px;
+}
+/*--------手机分享--------*/
+</style>
+<script type="text/javascript" src="../../module/jquery/1.11.2/jquery-1.11.2.js"></script>
+<!--<script type="text/javascript" src="../../module/popup/popup.js"></script>-->
+    <script type="text/javascript" src="../../module/popup/popup-v2.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$(".btn").click(function(){
+//		myPopup({
+//			"elem":".popup",
+//			"close":".popup .popup_close"
+//		})
+        myPopup({
+            "elem":".popup",
+            "close":".popup .popup_close"
+        })
+	})
+})
+</script>
+</head>
+
+<body>
+	
+	<a class="btn" style="display:block;width:276px;height:54px;margin:0 auto;" href="javascript:;"><img src="../../static/popup/img/button.png"></a>
+	<!-- 弹层 -->
+	<div class="popup">
+  <div class="popup_bar"><span class="popup_tip">提示</span><a href="#">
+    <div class="popup_close"></div>
+    </a></div>
+  <div class="popup_txt">亲，参加活动需要先登录，名品会员请点击<a href="##"><strong> 登录</strong></a><br />
+没有账号，<a href="##"><strong>马上注册</strong></a></div>
+</div>
+<!--End 弹层 -->
+</body>
+</html>

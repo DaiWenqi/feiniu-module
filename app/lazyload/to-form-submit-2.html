@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<script type="text/javascript" src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="jquery-mask-2.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#showShadow').click(function(){
+			$('.js_load').mask({maskMsg: '正在提交，请稍候...'});
+			$('#hideShadow').show();
+		});
+
+		$('#hideShadow').click(function(){
+			$('.js_load').mask('hide');
+			//$('#hideShadow').hide();
+		});
+	})
+	</script>
+</head>
+<body>
+	<form class="js_load" style="height:574px;width:765px;" method="get">
+		<input name="name" type="text">
+		<input id="showShadow" type="button" value="提交表单" />
+	</form>
+	<input id="hideShadow" type="button" value="隐藏遮罩" style="display:none;" />
+</body>
+</html>

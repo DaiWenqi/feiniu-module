@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #div1{width: 500px;height: 500px;background: pink;}
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+
+    <script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script>
+        $(function(){
+
+
+            autoHeight({
+                $obj:$('#div1'),
+                width:true,
+                height:true
+            })
+
+            function autoHeight(option){
+                var obj=option.$obj,
+                        iW=option.width,
+                        iH=option.width;
+                if(iW){
+                    iW=obj.outerWidth();
+                }
+                if(iH){
+                    iH=obj.outerHeight();
+                }
+
+                obj.css({
+                    height:iH,
+                    width:iW
+                })
+
+                //xianshi
+                $('.view').val("高度"+iH+"px"+"，宽度"+iW+"px");
+
+            }
+//            $(window).resize(auto)
+
+            //============================
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="../../module/rest.css/kissy-reset.css" />
+</head>
+
+<body>
+	
+
+
+	注：需要在服务器环境上运行
+	<input id="copy1" type="button" value="复制" />
+	<input id="description" type="text" value="复制" />
+	<div id="div1">divdiv</div>
+
+	<pre>
+		myCopy({
+			trigger:$('#copy1'), //绑定出发元素
+			flashPath:"../../module/ZeroClipboard/ZeroClipboard.swf", //flash 相对当前路径
+			copyCont:$('#description').val() //要复制的内容
+		})
+	</pre>
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script src="../../module/ZeroClipboard/ZeroClipboard.js"></script>
+    <script>
+
+
+
+        $(function(){
+            	myCopy({
+					trigger:$('#copy1'),
+					flashPath:"../../module/ZeroClipboard/ZeroClipboard.swf",
+					copyCont:$('#description').val()
+				})
+
+			function myCopy(opts){
+				this.trigger=opts.trigger;
+				this.fP=opts.flashPath;
+				this.copyCont=opts.copyCont;
+
+				this.trigger.zclip({ 
+					path:this.fP, 
+					copy:this.copyCont 
+				}); 
+
+			}
+        })
+    </script>
+</body>
+</html>

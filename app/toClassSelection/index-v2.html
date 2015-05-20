@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分类选择</title>
+	<style>
+	
+	*{margin: 0;padding: 0;list-style: none;  font: 12px/1.67em "宋体",Tahoma, Arial, "Simsun", sans-serif;  text-decoration: none;color: #000;}/*临时css重置*/
+
+
+	/*弹窗*/
+.tool_popup {
+	width: 903px;
+	padding: 6px;
+	background: #6b6b6b;
+}
+
+.tool_popup .tool_con {
+	background: #fff;
+	overflow: hidden;
+}
+
+.tool_popup .tool_con .tool_title {
+	height: 35px;
+	background: #f6f6f6;
+}
+
+.tool_popup .tool_con .tool_title h2 {
+	margin-left: 10px;
+	width: 80px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	line-height: 35px;
+	float: left;
+}
+
+.tool_popup .tool_con .tool_title i {
+	display: block;
+	width: 12px;
+	height: 12px;
+	float: right;
+	background: url(images/coupon.jpg) no-repeat 0 0;
+	margin: 12px 10px 11px 0;
+	cursor: pointer;
+}
+
+.tool_popup .tool_con .tool_add {
+	height: 28px;
+	margin: 10px 0 10px 0;
+}
+
+.tool_popup .tool_con .tool_add p {
+	display: block;
+	color: #3c3c3c;
+	width: 75px;
+	float: left;
+	line-height: 28px;
+	margin-left: 20px;
+}
+
+.tool_popup .tool_con .tool_add select {
+	width: 198px;
+	border: 1px solid #dddddd;
+	height: 26px;
+	float: left;
+}
+
+.tool_popup .tool_con .tool_ifi {
+	margin-top: 15px;
+	overflow: hidden;
+}
+
+.tool_popup .tool_con .tool_ifi .cate {
+	width: 213px;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.tool_popup .tool_con .tool_ifi .cate ul {
+	padding: 10px 5px 10px 15px;
+	border: 1px solid #dfdfdf;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.tool_popup .tool_con .tool_ifi .cate ul li {
+	display: block;
+	width: 191px;
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	color: #3c3c3c;
+	cursor: pointer;
+}
+
+.tool_popup .tool_con .tool_ifi .cate ul li.on {
+	color: #f22e00;
+}
+
+.tool_popup .tool_con .add_btn {
+	height: 22px;
+	width: 120px;
+	float: left;
+	padding: 173px 0 173px;
+}
+
+.tool_popup .tool_con .add_btn a.add_all {
+	width: 100px;
+	height: 26px;
+	display: block;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+	vertical-align: middle;
+	background: url(images/coupon.jpg) no-repeat -1px -334px;
+	margin-left: 20px;
+}
+
+.tool_popup .tool_con .add_con {
+	width: 482px;
+	float: left;
+	border: 1px solid #dddddd;
+	margin-left: 20px;
+	padding: 0 10px 10px 15px;
+	height: 368px;
+}
+
+.tool_popup .tool_con .add_con em {
+	width: 127px;
+	display: block;
+	height: 22px;
+	border: 1px solid #d1d1d1;
+	color: #313131;
+	line-height: 24px;
+	float: left;
+	margin: 10px 10px 0 0;
+	padding: 0 5px 0 5px;
+	background: #f3f3f3;
+}
+
+.tool_popup .tool_con .add_con em ins {
+	display: block;
+	width: 13px;
+	height: 13px;
+	float: right;
+	background: url(images/cha.jpg) no-repeat;
+	margin: 5px 5px 4px 0;
+}
+
+.tool_popup .tool_con .tool_add .searchText {
+  width: 180px;
+  height: 30px;
+  margin: 2px 0;
+  margin-right: 10px;
+  float: left;
+}
+
+a.tool_seach {
+  display: block;
+  width: 89px;
+  height: 30px;
+  background: url(images/coupon.jpg) no-repeat 0 -31px;
+  float: left;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  margin: 2px 0 2px 0;
+}
+/*确认按钮*/
+a.up_step {
+	width: 89px;
+	height: 30px;
+	display: block;
+	background: url(images/coupon.jpg) no-repeat 0 -31px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+
+.tool_popup .tool_con .tool_ifi .cate .js_show_categoryLI{height:368px; overflow: scroll-y; overflow-y: scroll;}
+.tool_popup .tool_con .tool_ifi .cate .js_show_categoryLI li:hover{ background: #F76809; color:#fff;}
+
+	</style>
+
+</head>
+<body>
+	<!-- =S 弹窗 -->
+<div style="" class="tool_popup" id="categoryDlg">
+  <div style="min-height:540px;" class="tool_con">
+      <div class="tool_title">
+        <h2>选择类目</h2>
+          <i data-role="c-close"></i>
+      </div>
+      <div class="tool_add">
+      <select style="margin-left:20px;" date-category="js_p_select"><option value="">请选择</option><option value="CG100482">手机、数码、配件</option><option value="CG100483">电脑、外设、办公</option><option value="CG100487">家居家装、收纳、运动</option><option value="CG100489">服饰、童装、饰品配件</option><option value="CG100801">茶冲乳品、酒水、饮料</option><option value="CG100535">測試工程用（勿删）L1</option><option value="CG100687">ADI用</option><option value="CG100494">母婴、玩具</option><option value="CG100495">文具、图书、汽车用品</option><option value="CG100461">台湾精品美食</option><option value="CG100498">飞牛券、生活券</option><option value="CG100619">活动专用空分类</option><option value="CG100757">购物卡/票券/珠宝首饰</option><option value="CG100484">家用电器</option><option value="CG100485">家庭清洁、纸、卫浴</option><option value="CG100492">食品、饮料、酒水</option><option value="CG100493">进口食品、进口牛奶</option><option value="CG100767">大家电（上海专属）</option><option value="CG100488">床品、内衣、毛巾</option><option value="CG100490">鞋靴、箱包</option><option value="CG100658">保健滋补、计生、器械</option><option value="CG100774">生鲜、冷藏、冷冻食品</option><option value="CG100491">美容化妆、个人护理</option><option value="CG100486">厨具、餐具、一次性</option><option value="CG100811">运动休闲产品002</option><option value="CG100814">商旅办公test001</option><option value="CG100822">shirley测试群组</option><option value="CG100809">运动休闲001</option><option value="CG100816">台北_Lia</option><option value="CG100826">snaili测试</option></select>
+      </div>
+      <div class="tool_ifi">
+        <div class="cate">
+            <ul class="js_show_categoryLI">
+            	
+
+				<li role-number="CC200293">灯管/灯泡</li><li role-number="CC200296">阅读台灯</li><li role-number="CC200298">装饰台灯</li><li role-number="CC200302">落地灯</li><li role-number="CC200306">壁灯射灯</li>
+
+            </ul> 
+              <a href="javascript:void(0);" frame="categoryFrame" data-role="sureBtn" class="up_step tool_fl">确认</a>
+         </div>
+         <div class="add_btn">
+           <a href="javascript:void(0);" class="add_all">添加全部</a>
+         </div> 
+         <div class="add_con"></div>
+       </div>
+  </div>
+</div>
+<!-- =E 弹窗 -->
+
+<script type="text/javascript" src="../../lib/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<!-- <script type="text/javascript" src="http://wh-files.fn.com/file/UI/dwq/jquery/1.11.2/jquery-1.11.2.min.js"></script> -->
+	<script type="text/javascript" src="js/js-v2.js"></script>
+</body>
+</html>

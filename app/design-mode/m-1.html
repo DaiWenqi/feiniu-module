@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script>
+        $(function(){
+
+            //存在某个对象就执行，不存在就不执行
+            var obj=$('.js_obj');
+
+            if(obj){
+                fn()
+            }
+
+            //函数
+            function fn(){
+                alert('执行');
+                return true;
+            }
+        })
+
+    </script>
+</head>
+<body>
+	  <div class="js_obj"></div>
+</body>
+</html>

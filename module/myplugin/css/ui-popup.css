@@ -1,0 +1,61 @@
+/*!
+ @describe 弹窗
+ @create By Damon.Dwq
+ @contact qq361904805
+ @time 2015-02-10 14:30:08
+ @last time 2015-03-02 14:47:18
+*/
+.ui-popup{border: 1px solid #999;border-radius: 6px;position: relative;}
+	.ui-popup-grid{
+		width: auto;
+		margin: 0;
+		border: 0 none;
+		border-collapse:collapse;
+		border-spacing: 0;
+		background: transparent;
+	}
+	
+	.ui-popup-header,
+	.ui-popup-body,
+	.ui-popup-ft {
+		padding: 0;
+		border: 0 none;
+		text-align: left;
+		background: transparent;
+	}
+
+	.ui-popup-hd{white-space: nowrap;border-bottom: 1px solid #E5E5E5;}
+		.ui-popup-title{margin: 0; min-height: 16px;padding: 15px;font-weight: bold;height: 14px;cursor: default;}
+		.ui-popup-close{cursor: pointer;float: right;position: relative;right: 13px;top:13px;}
+
+	.ui-popup-bd{padding: 20px;text-align: center;}
+		.ui-popup-cont{display: inline-block;vertical-align: middle;text-align: left;}
+
+	.ui-popup-ft{padding: 0 20px 20px 20px;overflow: hidden;}
+		.ui-popup-button{float: right;white-space: nowrap;padding: 6px 12px;}
+
+			.ui-popup-ft button {
+			  color: #333333;
+			  background-color: #ffffff;
+			  border-color: #cccccc;
+				cursor: pointer;
+				border: 1px solid transparent;
+				border-radius: 4px;
+				padding: 6px 12px;
+				border-color: #cccccc;
+			}
+
+			.ui-popup-ft button:hover,
+			.ui-popup-ft button:focus,
+			.ui-popup-ft button:active {
+			  color: #333333;
+			  background-color: #ebebeb;
+			  border-color: #adadad;
+			}
+			.ui-popup-ft .ui-popup-ok{color: #ffffff;
+			background-color: #428bca;
+			border-color: #357ebd;}
+			.ui-popup-ft .ui-popup-ok:hover{color: #ffffff;
+			background-color: #3276b1;
+			border-color: #285e8e;}
+

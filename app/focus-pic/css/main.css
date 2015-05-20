@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+.carousel li {list-style: none;}
+.carousel{ height:300px; position:relative; overflow:hidden;}
+.carousel .pic img{ height:300px; display:block;}
+.carousel .next{ width:36px; height:100px; background:url(../images/icon_right.png) no-repeat; display:block; position:absolute; top:90px; right:0px;}
+.carousel .close-btn{ display:block; width:36px; height:100px; background:url(../images/icon_close.png) no-repeat; position:absolute; right:0; top:90px;}
+.carousel .prev{ width:36px; height:100px; background:url(../images/icon_left.png) no-repeat; display:block; position:absolute; top:90px;left:0px;}
+.carousel ul.hd{ overflow:hidden; zoom:1; position:absolute; z-index:3px; bottom:15px; right: 50%;
+margin-right: -38px;}
+.carousel ul.hd li{ width:10px; height:10px; float:left; background:url(../images/point_1.png) no-repeat; margin-right:15px; cursor:pointer;}
+.carousel ul.hd li.on{width:10px; height:10px; float:left; background:url(../images/point_2.png) no-repeat; margin-right:15px;}
+
+

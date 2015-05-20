@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.item{width: 100px;height: 100px;background: pink;}
+		.item:nth-child(odd){width: 100px;height: 100px;background: silver;}
+		.active{
+			background: red;
+		}
+		.hidden{display: none;}
+
+	</style>
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="webTab.js"></script>
+	<script type="text/javascript">
+	$(function(){
+	    new Tab().init({
+	        switchTo: 0,
+	        callback: function(index){
+	            console.log(index);
+	            if(index==0){
+	            	alert('往第一个里加')
+	            }else{
+	            	alert('往第二个里加')
+	            }
+	        }
+	    });
+	});
+
+	</script>
+</head>
+<body>
+	<div class="navs">
+		<input class="active" type="button" value="A" id="inpt1">
+		<input type="button" value="B" id="inpt2">
+	</div>
+	<div class="conts">
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</body>
+</html>

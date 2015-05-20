@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myPopup</title>
+	<link rel="stylesheet" href="css/ui-popup.css">
+	<style>
+		.popCont{width: 500px;height: 200px;background: gray;}
+	</style>
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/popup.js"></script>
+	<script>
+	$(function(){
+		$("input").click(function(){
+			myPopup({
+		
+				"elem": ".popCont", //dom id
+				"close": ".pop_close,.btn_ok,.btn_cancle", //关闭按钮 class
+				"okClass":".btn_ok", //确认按钮 class
+				okFn:function(){alert("执行确认回调")},//确认回调
+				"cancelClass":".btn_ok", //取消按钮 class
+				cancelFn:function(){alert("执行确认回调")},//取消回调
+				callBack:"", //回调函数
+				noMask:true  //遮罩层
+			})
+		})
+		 
+	})
+	</script>
+	
+</head>
+<body>
+	<input type="button" value="open dialog">
+	<div class="popCont"></div>
+	<script id="test" type="text/html">
+		<h1>{{title}}</h1>
+		<ul>
+		    {{each list as value i}}
+		        <li>索引 {{i + 1}} ：{{value}}</li>
+		    {{/each}}
+		</ul>
+	</script>
+	<div style="position:absolute;">
+		<div class="ui-popup">
+			<div class="ui-popup-grid">
+				<div class="ui-popup-hd">
+				<span class="ui-popup-close">&#215;</span>
+					<div class="ui-popup-title">消息狂</div>
+					
+				</div>
+				<div class="ui-popup-bd">
+					<div class="ui-popup-cont">风吹起的青色衣衫，夕阳里的温暖容颜，你比以前更加美丽，像盛开的花<br>
+	——许巍《难忘的一天》</div>
+				</div>
+				<div class="ui-popup-ft">
+					<div class="ui-popup-button">
+					<button type="button" data-id="cancel">取消</button>
+					<button type="button" class="ui-popup-ok">确 定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>分页</title>
+<link type="text/css" rel="stylesheet" href="../../module/rest.css/kissy-reset.css" />
+<!-- <link type="text/css" rel="stylesheet" href="../../static/popup/css/某个样式.css" /> -->
+
+<style type="text/css">
+    
+ 
+/*网站分页*/
+ body{
+     font-size:12px;
+     color:#333;
+     font-family:Arial, sans-serif;
+}
+ .page_able,.page_on,.page_off{
+    display:inline-block;
+     line-height:16px;
+     padding:2px 7px;
+     margin-left:3px;
+     font-family:Verdana;
+     vertical-align:middle;
+}
+ .page_able,.page_off{
+    border:1px solid #ccc;
+     background-color:#fff;
+}
+ .page_able{
+    color:#414141;
+}
+ .page_able:hover{
+    border-color:#aaa;
+     background-color:#eee;
+     color:#333;
+     text-decoration:none;
+}
+ .page_off{
+    color:#ccc;
+}
+ .btd{
+    border-top:1px solid #ddd;
+}
+ .p20{
+    padding:20px;
+}
+ a{
+     text-decoration:none;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+<div>
+
+<div id="divPage" class="p20 btd"></div>
+</div>
+</form>
+
+
+	<script src="../../module/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+    <script src="../../module/paging/GetPager/jquery.paging.js"></script>
+    <script language="JavaScript" type="text/javascript">
+ 
+    $(document).ready(function() {
+        SelPage(2);
+
+    });
+
+    function SelPage(currentPage) {
+        $(this).GetPager({
+            total: 30,
+            currentPage: currentPage,
+            pagesize: 3,
+            clickMethod: "SelPage",
+            divHtml: "divPage"
+        });
+    }
+ 
+</script>
+</body>
+</html>
